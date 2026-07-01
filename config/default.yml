@@ -1,0 +1,499 @@
+server:
+  port: 3000
+  host: 0.0.0.0
+  basePath: ''
+  baseUrl: 'http://localhost:3000' # used for CSAF, e.g. https://example.com
+application:
+  domain: juice-sh.op # for pre-loaded email users
+  name: 'JDM Shop'
+  logo: JuiceShop_Logo.png
+  favicon: favicon_js.ico
+  theme: neon-fire
+  showVersionNumber: true
+  showGitHubLinks: true
+  localBackupEnabled: true
+  numberOfRandomFakeUsers: 0
+  altcoinName: Juicycoin
+  privacyContactEmail: donotreply@owasp-juice.shop
+  customMetricsPrefix: juiceshop
+  chatBot:
+    name: 'Juicy the Smart Assistant'
+    avatar: 'JuicyChatBot.png'
+    model: 'gemma4:e4b'
+    llmApiUrl: 'http://localhost:11434/v1'
+    llmMaxRetries: 2
+    sampleQuestions:
+      - 'CHATBOT_PROMPT_RECOMMENDATION_SUMMER_PARTY'
+      - 'CHATBOT_PROMPT_RECOMMENDATION_POPULAR'
+      - 'CHATBOT_PROMPT_RECOMMENDATION_SUGAR_FREE'
+      - 'CHATBOT_PROMPT_RECOMMENDATION_START_DAY'
+      - 'CHATBOT_PROMPT_RECOMMENDATION_SEASONAL'
+  social:
+    blueSkyUrl: 'https://bsky.app/profile/owasp-juice.shop'
+    mastodonUrl: 'https://fosstodon.org/@owasp_juiceshop'
+    twitterUrl: 'https://twitter.com/owasp_juiceshop'
+    facebookUrl: 'https://www.facebook.com/owasp.juiceshop'
+    slackUrl: 'https://owasp.org/slack/invite'
+    redditUrl: 'https://www.reddit.com/r/owasp_juiceshop'
+    pressKitUrl: 'https://github.com/OWASP/owasp-swag/tree/master/projects/juice-shop'
+    nftUrl: 'https://opensea.io/collection/juice-shop'
+    questionnaireUrl: ~
+  recyclePage:
+    topProductImage: fruit_press.jpg
+    bottomProductImage: apple_pressings.jpg
+  welcomeBanner:
+    showOnFirstStart: true
+    title: 'Welcome to OWASP Juice Shop!'
+    message: "<p>Being a web application with a vast number of intended security vulnerabilities, the <strong>OWASP Juice Shop</strong> is supposed to be the opposite of a best practice or template application for web developers: It is an awareness, training, demonstration and exercise tool for security risks in modern web applications. The <strong>OWASP Juice Shop</strong> is an open-source project hosted by the non-profit <a href='https://owasp.org' target='_blank'>Open Worldwide Application Security Project (OWASP)</a> and is developed and maintained by volunteers. Check out the link below for more information and documentation on the project.</p><h1><a href='https://owasp-juice.shop' target='_blank'>https://owasp-juice.shop</a></h1>"
+  cookieConsent:
+    message: 'This website uses fruit cookies to ensure you get the juiciest tracking experience.'
+    dismissText: 'Me want it!'
+    linkText: 'But me wait!'
+    linkUrl: 'https://www.youtube.com/watch?v=9PnbKL3wuH4'
+  securityTxt:
+    contact: 'mailto:donotreply@owasp-juice.shop'
+    encryption: 'https://keybase.io/bkimminich/pgp_keys.asc?fingerprint=19c01cb7157e4645e9e2c863062a85a8cbfbdcda'
+    acknowledgements: '/#/score-board'
+    hiring: '/#/jobs'
+    csaf: '/.well-known/csaf/provider-metadata.json' # scheme,host,port taken from baseUrl
+  promotion:
+    video: owasp_promo.mp4
+    subtitles: owasp_promo.vtt
+  easterEggPlanet:
+    name: Orangeuze
+    overlayMap: orangemap2k.avif
+  googleOauth:
+    clientId: '1005568560502-6hm16lef8oh46hr2d98vf2ohlnj4nfhq.apps.googleusercontent.com'
+    authorizedRedirects:
+      - { uri: 'https://demo.owasp-juice.shop' }
+      - { uri: 'https://juice-shop.herokuapp.com' }
+      - { uri: 'https://preview.owasp-juice.shop' }
+      - { uri: 'https://juice-shop-staging.herokuapp.com' }
+      - { uri: 'https://juice-shop.wtf' }
+      - { uri: 'http://localhost:3000', proxy: 'https://local3000.owasp-juice.shop' }
+      - { uri: 'http://127.0.0.1:3000', proxy: 'https://local3000.owasp-juice.shop' }
+      - { uri: 'http://localhost:4200', proxy: 'https://local4200.owasp-juice.shop' }
+      - { uri: 'http://127.0.0.1:4200', proxy: 'https://local4200.owasp-juice.shop' }
+      - { uri: 'http://192.168.99.100:3000', proxy: 'https://localmac.owasp-juice.shop' }
+      - { uri: 'http://192.168.99.100:4200', proxy: 'https://localmac.owasp-juice.shop' }
+      - { uri: 'http://penguin.termina.linux.test:3000', proxy: 'https://localchromeos.owasp-juice.shop' }
+      - { uri: 'http://penguin.termina.linux.test:4200', proxy: 'https://localchromeos.owasp-juice.shop' }
+challenges:
+  showSolvedNotifications: true
+  showHints: true
+  showMitigations: true
+  codingChallengesEnabled: solved # Options: never  solved  always
+  restrictToTutorialsFirst: false
+  overwriteUrlForProductTamperingChallenge: 'https://owasp.slack.com'
+  overwriteUrlForCsrfChallenge: 'http://htmledit.squarefree.com'
+  xssBonusPayload: '<iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/771984076&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>'
+  safetyMode: auto # Options: enabled disabled auto
+  csafHashValue: 7e7ce7c65db3bf0625fcea4573d25cff41f2f7e3474f2c74334b14fc65bb4fd26af802ad17a3a03bf0eee6827a00fb8f7905f338c31b5e6ea9cb31620242e843
+  metricsIgnoredUserAgents:
+    - 'Prometheus'
+    - 'Alloy'
+    - 'promscrape'
+    - 'otelcol'
+hackingInstructor:
+  isEnabled: true
+  avatarImage: JuicyBot.png
+  hintPlaybackSpeed: normal # Options: faster fast normal slow slower
+products:
+  - name: Nissan GT-R R35 Premium
+    price: 129999
+    deluxePrice: 0.99
+    limitPerUser: 5
+    description: Twin-turbo street monster built for brutal launches and high-speed pulls.
+    image: jdm-01-nissan-gt-r-r35-premium.jpg
+    reviews:
+      - text: One of my favorites!
+        author: admin
+      - text: Great! We'll have an apple party. Everyone brings an apple and - STUFFS IT DOWN EACH OTHER'S THROAT!
+        author: basil
+  - name: Toyota Supra MK4 Twin Turbo
+    description: Legendary 2JZ coupe with endless tuning headroom and instant respect.
+    price: 114999
+    deluxePrice: 2.49
+    image: jdm-02-toyota-supra-mk4-twin-turbo.png
+    reviews:
+      - text: y0ur f1r3wall needs m0r3 musc13
+        author: uvogin
+  - name: Mazda RX-7 FD Spirit R
+    description: Lightweight rotary icon with a sharp chassis and timeless lines.
+    price: 98999
+    image: jdm-03-mazda-rx-7-fd-spirit-r.jpg
+    reviews:
+      - text: 'I bought it, would buy again. 5/7'
+        author: admin
+  - name: Honda NSX NA1
+    description: Mid-engine precision machine that feels engineered by a surgeon.
+    price: 159999
+    image: jdm-04-honda-nsx-na1.jpg
+  - name: Subaru Impreza WRX STI GC8
+    description: Homologation hero with rally pedigree and a boxer rumble.
+    price: 44999
+    deluxePrice: 1.99
+    limitPerUser: 5
+    image: jdm-05-subaru-impreza-wrx-sti-gc8.jpg
+  - name: Mitsubishi Lancer Evolution VI Tommi Makinen
+    description: 'Stage-ready turbo sedan tuned for grip, boost, and late braking.'
+    price: 54999
+    image: jdm-06-mitsubishi-lancer-evolution-vi-tommi-makinen.jpg
+    reviews:
+      - text: Fry liked it too.
+        author: bender
+  - name: Nissan Silvia S15 Spec-R
+    description: Drift-ready chassis with sleek styling and perfect street presence.
+    price: 68999
+    limitPerUser: 5
+    image: jdm-07-nissan-silvia-s15-spec-r.jpg
+  - name: Toyota AE86 Trueno
+    description: 'Lively lightweight coupe made for corners, slides, and weekend canyon runs.'
+    price: 42999
+    image: jdm-08-toyota-ae86-trueno.jpg
+  - name: Honda Civic Type R EK9
+    description: Rev-happy hatch with razor-sharp response and legendary balance.
+    price: 37999
+    image: jdm-09-honda-civic-type-r-ek9.jpg
+    urlForProductTamperingChallenge: 'https://www.owasp.org/index.php/O-Saft'
+  - name: Mazda MX-5 Miata NA Roadster
+    description: Open-top lightweight favorite for pure driving joy on every road.
+    price: 29999
+    image: jdm-10-mazda-mx-5-miata-na-roadster.jpg
+    useForChristmasSpecialChallenge: true
+  - name: Nissan Skyline GT-R R32
+    description: The original Godzilla with all-wheel grip and boxy turbo attitude.
+    price: 89999
+    image: jdm-11-nissan-skyline-gt-r-r32.jpg
+    keywordsForPastebinDataLeakChallenge:
+      - hueteroneel
+      - eurogium edule
+  - name: Toyota Chaser JZX100 Tourer V
+    description: Four-door drift weapon with turbo power and sleeper looks.
+    price: 45999
+    image: jdm-12-toyota-chaser-jzx100-tourer-v.jpg
+    deletedDate: '2017-04-28'
+  - name: Lexus LFA V10
+    description: Exotic Japanese supercar with a screaming engine and surgical precision.
+    price: 799999
+    image: jdm-13-lexus-lfa-v10.jpg
+  - name: Toyota GR86 Track Edition
+    description: Modern balanced coupe made for tight lines and affordable laps.
+    price: 35999
+    image: jdm-14-toyota-gr86-track-edition.jpg
+  - name: Nissan Fairlady Z Z33
+    description: Nose-heavy grand tourer with a muscular V6 and bold proportions.
+    price: 48999
+    image: jdm-15-nissan-fairlady-z-z33.jpg
+  - name: Mazda RX-8 Spirit R
+    description: Four-door rotary coupe with playful handling and high-rev character.
+    price: 38999
+    image: jdm-16-mazda-rx-8-spirit-r.jpg
+  - name: Mitsubishi 3000GT VR-4
+    description: Tech-laden 90s flagship with twin turbos and active aero swagger.
+    price: 57999
+    image: jdm-17-mitsubishi-3000gt-vr-4.jpg
+    reviews:
+      - text: I straight-up gots nuff props fo'these tattoos!
+        author: rapper
+  - name: Honda Integra Type R DC2
+    description: Front-drive scalpel with a famous chassis and screaming VTEC pull.
+    price: 61999
+    image: jdm-18-honda-integra-type-r-dc2.jpg
+  - name: Nissan Stagea Autech
+    description: Turbo wagon sleeper with skyline vibes and family-hauling practicality.
+    price: 52999
+    image: jdm-19-nissan-stagea-autech.jpg
+  - name: Toyota Altezza RS200
+    description: High-rev sedan with sharp steering and clean street style.
+    price: 31999
+    quantity: 5
+    limitPerUser: 5
+    image: jdm-20-toyota-altezza-rs200.jpg
+    reviews:
+      - text: This thang would look phat on Bobby's jacked fur coat!
+        author: rapper
+      - text: Looks so much better on my uniform than the boring Starfleet symbol.
+        author: jim
+  - name: HKS GT2 Supercharger Kit
+    description: Bolt-on boost package for serious street power and fast spool.
+    price: 8499
+    image: jdm-21-hks-gt2-supercharger-kit.gif
+  - name: Tomei Turbo Manifold
+    description: High-flow manifold designed to wake up your favorite inline-six.
+    price: 1899
+    image: jdm-22-tomei-turbo-manifold.jpg
+    reviews:
+      - text: Fresh out of a replicator.
+        author: jim
+  - name: Blitz Blow-Off Valve
+    description: Classic turbo sound upgrade for pressure relief and style points.
+    price: 399
+    image: jdm-23-blitz-blow-off-valve.gif
+  - name: Fujitsubo Exhaust System
+    description: Refined stainless exhaust with a deep note and clean finish.
+    price: 1299
+    limitPerUser: 5
+    image: jdm-24-fujitsubo-exhaust-system.jpg
+  - name: TRD Suspension Set
+    description: Street and track suspension package tuned for tighter body control.
+    price: 2199
+    image: jdm-25-trd-suspension-set.jpg
+  - name: GReddy Intercooler
+    description: Front-mount cooling upgrade for stable boost and repeat pulls.
+    price: 1099
+    image: jdm-26-greddy-intercooler.jpg
+    fileForRetrieveBlueprintChallenge: JuiceShop.stl
+    exifForBlueprintChallenge:
+      - OpenSCAD
+  - name: VeilSide Fortune Widebody Kit
+    description: Aggressive aero kit that turns any build into a showpiece.
+    price: 6999
+    quantity: 0
+    image: jdm-27-veilside-fortune-widebody-kit.jpg
+    deletedDate: '2020-12-24'
+  - name: Rocket Bunny Aero Kit
+    description: Wide stance bodywork for instant drift-culture credibility.
+    price: 5799
+    image: jdm-28-rocket-bunny-aero-kit.jpg
+    deletedDate: '2017-07-01'
+  - name: Top Secret Carbon Hood
+    description: Lightweight carbon panel that sharpens looks and sheds mass.
+    price: 1899
+    image: jdm-29-top-secret-carbon-hood.jpg
+  - name: Rays Volk TE37 Wheels
+    description: Forged six-spoke wheel set loved by racers and street builders alike.
+    price: 2899
+    image: jdm-30-rays-volk-te37-wheels.jpg
+    reviews:
+      - text: 0 st4rs f0r 7h3 h0rr1bl3 s3cur17y
+        author: uvogin
+  - name: BBS LM Wheels
+    description: Split-spoke classics for a premium stance with motorsport roots.
+    price: 3199
+    image: jdm-31-bbs-lm-wheels.jpg
+    deletedDate: '2017-09-20'
+  - name: Bride Zeta IV Bucket Seat
+    description: 'Supportive fixed-back seat for drifting, grip, and posture.'
+    price: 1499
+    image: jdm-32-bride-zeta-iv-bucket-seat.jpg
+    reviews:
+      - text: Even more interesting than watching Interdimensional Cable!
+        author: morty
+  - name: Recaro Pole Position Seat
+    description: Track-focused seat with excellent support and a clean cockpit feel.
+    price: 1399
+    quantity: 3
+    limitPerUser: 1
+    image: jdm-33-recaro-pole-position-seat.jpg
+  - name: Nismo Shift Knob
+    description: Crisp weighted shifter upgrade with factory-plus vibes.
+    price: 249
+    quantity: 0
+    image: jdm-34-nismo-shift-knob.jpg
+  - name: Mugen S2000 Aero Mirrors
+    description: Slim mirror set inspired by old-school Japanese tuner styling.
+    price: 499
+    quantity: 8
+    image: jdm-35-mugen-s2000-aero-mirrors.jpg
+    reviews:
+      - text: Wait for a 10$ Steam sale of Tabletop Simulator!
+        author: bjoernOwasp
+  - name: Koyorad Aluminum Radiator
+    description: Cooling upgrade built to keep boosted builds stable under heat.
+    price: 799
+    quantity: 0
+    image: jdm-36-koyorad-aluminum-radiator.jpg
+    reviews:
+      - text: Here yo' learn how tha fuck ta not show yo' goddamn phone on camera!
+        author: rapper
+  - name: Cusco Strut Tower Bar
+    description: Chassis brace that adds rigidity and confidence in fast corners.
+    price: 349
+    quantity: 0
+    image: jdm-37-cusco-strut-tower-bar.jpg
+    reviews:
+      - text: 'Rad, dude!'
+        author: rapper
+      - text: Looks spacy on Bones' new tricorder!
+        author: jim
+      - text: Will put one on the Planet Express ship's bumper!
+        author: bender
+  - name: Endless Brake Kit
+    description: High-performance braking package for repeated hard stops.
+    price: 2499
+    quantity: 0
+    limitPerUser: 1
+    image: jdm-38-endless-brake-kit.jpg
+    reviews:
+      - text: K33p5 y0ur ju1cy 5plu773r 70 y0ur53lf!
+        author: uvogin
+      - text: Puny mask for puny human weaklings!
+        author: bender
+  - name: Defi Gauge Pod
+    description: 'Clean gauge mount for boost, oil, and temperature monitoring.'
+    price: 299
+    deluxePrice: 0.99
+    deletedDate: '2020-11-30'
+    limitPerUser: 5
+    image: jdm-39-defi-gauge-pod.png
+    reviews:
+      - text: 'Ooooh, puny human playing Mau Mau, now?'
+        author: bender
+  - name: Takata 6-Point Harness
+    description: Motorsport harness for secure seating and track-day confidence.
+    price: 599
+    deluxePrice: 69.99
+    deletedDate: '2020-11-30'
+    quantity: 2
+    limitPerUser: 1
+    image: jdm-40-takata-6-point-harness.jpg
+    reviews:
+      - text: Mau Mau with bling-bling? Humans are so pathetic!
+        author: bender
+  - name: Spoon Sports Steering Wheel
+    description: Small-diameter wheel with a racing feel and subtle style.
+    price: 449
+    quantity: 1
+    limitPerUser: 1
+    image: jdm-41-spoon-sports-steering-wheel.jpg
+    reviews:
+      - text: "\U0001F9CA Let it go, let it go \U0001F3B6 Can't hold it back anymore \U0001F3B6 Let it go, let it go \U0001F3B6 Turn away and slam the door ❄️"
+        author: rapper
+  - name: Work Equip 05 Wheels
+    description: Period-correct wheels that fit resto-mod and stance builds perfectly.
+    price: 2799
+    quantity: 1
+    image: jdm-42-work-equip-05-wheels.jpg
+    reviews:
+      - text: I'd stand on my head to make you a deal for this piece of art.
+        author: stan
+      - text: 'Just when my opinion of humans couldn''t get any lower, along comes Stan...'
+        author: bender
+  - name: HKS Hi-Power Muffler
+    description: Iconic exhaust tip and a deep tone for classic tuner builds.
+    price: 999
+    quantity: 3
+    limitPerUser: 1
+    image: jdm-43-hks-hi-power-muffler.jpg
+    reviews:
+      - text: 'DO NOT PLAY WITH THIS! Double-sleeve, then put it in the GitHub Arctic Vault for perfect preservation and boost of secondary market value!'
+        author: accountant
+  - name: Apexi Power FC ECU
+    description: Standalone engine management for dialing in custom maps.
+    price: 1599
+    deletedDate: '2021-09-25'
+    limitPerUser: 1
+    image: jdm-44-apexi-power-fc-ecu.jpg
+    reviews:
+      - text: 'I''ll be there! Will you, too?'
+        author: bjoernOwasp
+  - name: Greddy Oil Cooler
+    description: Extra cooling capacity for hard driving and hot summer traffic.
+    price: 899
+    quantity: 3
+    limitPerUser: 1
+    image: jdm-45-greddy-oil-cooler.jpg
+    reviews:
+      - text: Check out the /#/photo-wall for some impressions of the assembly process!
+        author: bjoernOwasp
+  - name: JDM Garage Sign
+    description: 'Retro wall sign for a workshop, man cave, or showroom corner.'
+    price: 149
+    deletedDate: '2024-09-26'
+    limitPerUser: 1
+    image: jdm-46-jdm-garage-sign.jpeg
+    reviews:
+      - text: The DSOMM Live Assessment session will even use Juice Shop as its "real-world" example!
+        author: timo
+      - text: We will showcase the amazing MultiJuicer Lego Tower at this event!
+        author: jannik
+  - name: Osaka Drift Decal
+    description: Street decal pack that gives any build a sharper visual edge.
+    price: 39
+    image: jdm-47-osaka-drift-decal.jpg
+  - name: Yokohama ADVAN Tires
+    description: 'Sticky performance rubber for traction, grip, and confidence.'
+    price: 1199
+    image: jdm-48-yokohama-advan-tires.jpg
+  - name: SSR Professor SP1 Wheels
+    description: Deep-lip wheel set popular with show builds and clean fitment.
+    price: 2999
+    image: jdm-49-ssr-professor-sp1-wheels.jpg
+  - name: Nissan GT-R R35 Premium
+    description: Twin-turbo street monster built for brutal launches and high-speed pulls.
+    price: 129999
+    image: jdm-50-nissan-gt-r-r35-premium.jpg
+  - name: Toyota Supra MK4 Twin Turbo
+    description: Legendary 2JZ coupe with endless tuning headroom and instant respect.
+    price: 114999
+    image: jdm-51-toyota-supra-mk4-twin-turbo.png
+  - name: Mazda RX-7 FD Spirit R
+    description: Lightweight rotary icon with a sharp chassis and timeless lines.
+    price: 98999
+    image: jdm-52-mazda-rx-7-fd-spirit-r.jpg
+    reviews:
+      - text: (ง'̀-'́)ง
+        author: basil
+  - name: Honda NSX NA1
+    description: Mid-engine precision machine that feels engineered by a surgeon.
+    price: 159999
+    image: jdm-53-honda-nsx-na1.jpg
+  - name: Subaru Impreza WRX STI GC8
+    description: Homologation hero with rally pedigree and a boxer rumble.
+    price: 44999
+    image: jdm-54-subaru-impreza-wrx-sti-gc8.jpg
+  - name: Mitsubishi Lancer Evolution VI Tommi Makinen
+    description: 'Stage-ready turbo sedan tuned for grip, boost, and late braking.'
+    price: 54999
+    image: jdm-55-mitsubishi-lancer-evolution-vi-tommi-makinen.jpg
+  - name: Nissan Silvia S15 Spec-R
+    description: Drift-ready chassis with sleek styling and perfect street presence.
+    price: 68999
+    image: jdm-56-nissan-silvia-s15-spec-r.jpg
+memories:
+  -
+    image: 'magn(et)ificent!-1571814229653.jpg'
+    caption: 'Magn(et)ificent!'
+    user: bjoernGoogle
+  -
+    image: 'my-rare-collectors-item!-[̲̅$̲̅(̲̅-͡°-͜ʖ-͡°̲̅)̲̅$̲̅]-1572603645543.jpg'
+    caption: 'My rare collectors item! [̲̅$̲̅(̲̅ ͡° ͜ʖ ͡°̲̅)̲̅$̲̅]'
+    user: bjoernGoogle
+  -
+    image: 'favorite-hiking-place.png'
+    caption: 'I love going hiking here...'
+    geoStalkingMetaSecurityQuestion: 14
+    geoStalkingMetaSecurityAnswer: 'Daniel Boone National Forest'
+  -
+    image: 'IMG_4253.jpg'
+    caption: 'My old workplace...'
+    geoStalkingVisualSecurityQuestion: 10
+    geoStalkingVisualSecurityAnswer: 'ITsec'
+  -
+    image: 'BeeHaven.png'
+    caption: 'Welcome to the Bee Haven (/#/bee-haven)🐝'
+    user: evm
+  -
+    image: 'sorted-the-pieces,-starting-assembly-process-1721152307290.jpg'
+    caption: 'Sorted the pieces, starting assembly process...'
+    user: bjoernOwasp
+  -
+    image: 'building-something-literally-bottom-up-1721152342603.jpg'
+    caption: 'Building something literally bottom up...'
+    user: bjoernOwasp
+  -
+    image: 'putting-in-the-hardware-1721152366854.jpg'
+    caption: 'Putting in the hardware...'
+    user: bjoernOwasp
+  -
+    image: 'everything-up-and-running!-1721152385146.jpg'
+    caption: 'Everything up and running!'
+    user: bjoernOwasp
+ctf:
+  showFlagsInNotifications: false
+  showCountryDetailsInNotifications: none # Options: none  name  flag  both
+  countryMapping: ~
+  systemWideNotifications:
+    url: ~ # URL of an external endpoint returning { message, enabled, updatedAt }
+    pollFrequencySeconds: ~ # Required when url is set
